@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Codeforces Auto-Open",
+  "version": "1.0",
+  "description": "Automatically opens Codeforces when you start Chrome or Brave",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Codeforces Auto-Open",
+    "default_popup": "popup.html"
+  }
+}

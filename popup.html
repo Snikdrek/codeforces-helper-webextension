@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 350px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 18px;
+      margin: 0;
+    }
+    .header-btn {
+      background-color: #666;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .header-btn:hover {
+      background-color: #555;
+    }
+    .section {
+      margin-bottom: 15px;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .mission-item {
+      background-color: white;
+      border-left: 4px solid #1f8dd6;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mission-item:hover {
+      background-color: #e8f4f8;
+      transform: translateX(2px);
+    }
+    .problem-id {
+      font-weight: bold;
+      color: #1f8dd6;
+      font-size: 13px;
+    }
+    .problem-name {
+      font-size: 12px;
+      color: #555;
+      margin-top: 3px;
+      word-break: break-word;
+    }
+    .difficulty {
+      font-size: 11px;
+      color: #999;
+      margin-top: 3px;
+    }
+    .solved-badge {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+    button {
+      background-color: #1f8dd6;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    button:hover {
+      background-color: #0066b2;
+    }
+    .secondary-btn {
+      background-color: #666;
+    }
+    .secondary-btn:hover {
+      background-color: #555;
+    }
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #999;
+    }
+    .refresh-btn {
+      background-color: #28a745;
+      font-size: 12px;
+      padding: 6px 10px;
+      width: auto;
+    }
+    .refresh-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Daily Missions</h1>
+    <button class="header-btn" id="homeBtn">📖 Details</button>
+  </div>
+
+  <div class="section" style="margin-bottom: 10px;">
+    <input type="text" id="userHandle" placeholder="Enter Codeforces handle" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 12px;">
+    <button id="setUserBtn" style="width: 100%; margin-top: 5px; background-color: #666; padding: 6px; font-size: 12px;">Set Handle</button>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Today's Problems to Solve:</div>
+    <div id="missionsList">
+      <div class="loading">Loading missions...</div>
+    </div>
+  </div>
+
+  <button id="openCFBtn">Open Codeforces</button>
+  <button class="secondary-btn refresh-btn" id="refreshBtn">🔄 Refresh Missions</button>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
